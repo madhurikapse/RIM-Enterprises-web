@@ -1,0 +1,109 @@
+/* 🌟 Image Container - Fullscreen Layout */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevents extra content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🌟 Full-size Image */
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image is fully visible */
+  }
+  
+  /* 🌟 Text Overlay on Image */
+  .text-overlay{
+    position: absolute;
+    top: 20%; /* Adjust text position */
+    left: 5%;
+    color: rgba(15, 15, 15, 0.445);
+    z-index: 10; background:rgba(13, 13, 13, 0.692); /* Remove background in mobile view */
+    padding: 15px 20px;
+    border-radius: 8px;
+    max-width: 50%; /* Prevents text from spreading too much */
+  }
+  
+  /* 🌟 Font Styles */
+  .text-overlay h1 {
+    font-size: 2rem; /* Default size */
+    font-weight: bold;
+    color: rgb(247, 239, 239);
+    border: 2px solid rgba(128, 128, 128, 0.24);
+  }
+  
+  .text-overlay h1:first-child {
+    font-size: 2.5rem; /* Larger main heading */
+  }
+  
+  /* ✅ Responsive Design */
+  
+  /* 📏 Tablets (max-width: 1024px) */
+  @media (max-width: 1024px) {
+    .text-overlay {
+      top: 15%; /* Adjust text position */
+      left: 5%;
+      max-width: 60%;
+    }
+  
+    .text-overlay h1 {
+      font-size: 1.8rem;
+    }
+  
+    .text-overlay h1:first-child {
+      font-size: 2.3rem;
+    }
+  }
+  
+  /* 📏 Mobile Devices (max-width: 768px) */
+  @media (max-width: 768px) {
+    .image-container {
+      height: auto; /* Auto height for better mobile view */
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image-container img {
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    .text-overlay {
+      position: relative;
+      border: 1px;
+      bottom:200px; /* Change absolute to relative so it stacks below image */
+      background:rgba(101, 98, 98, 0.422); /* Remove background in mobile view */
+      color: black; /* Text color black for readability */
+      text-align:top; /* Center text in mobile */
+      width: 100%; /* Full width */
+      padding: 20px;
+      max-width: 100%;
+    }
+  
+    .text-overlay h1 {
+      font-size: 1.5rem;
+    }
+  
+    .text-overlay h1:first-child {
+      font-size: 2rem;
+    }
+  }
+  
+  /* 📏 Small Mobile Devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .text-overlay {
+      padding: 15px;
+    }
+  
+    .text-overlay h1 {
+      font-size: 1.3rem;
+    }
+  
+    .text-overlay h1:first-child {
+      font-size: 1.8rem;
+    }
+  }
+  
