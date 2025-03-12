@@ -7,14 +7,15 @@ import Careers from './components/Careers.js'
 import Problems from './components/Problems.js'
 import Services from './components/Services.js'
 import Industries from './components/Industries.js'
-import { Feather } from "lucide-react";
 import Feature from "./pages/Feature.js";
+import OurSucessStories from "./pages/OurSucessStories.js";
 function App() {
   return (
     <Router>
       <Navbar/>
       <Home/>
       <Feature/>
+      <OurSucessStories/>
       <Routes>
         <Route path="/industries" element={<Industries/>}/>
         <Route path="/services" element={<Services/>} />

@@ -5,18 +5,18 @@ const Feature = () => {
   const features = [
     {
       img: "https://www.pwc.co.za/en/assets/images/GettyImages-1824716878-1600px.jpg",
-      title: "Feature One",
-      text: "This is the description for feature one."
+      title: "Africa Entertenmnet and  Media Outlet 2024 to 2028",
+      text: "Resilience and reinvention"
     },
     {
       img: "https://www.pwc.co.za/en/assets/images/AdobeStock_494618834-1600px.jpg",
-      title: "Feature Two",
-      text: "This is the description for feature two."
+      title: "Africa Anual Review 2024",
+      text: "A year of building trust and solving together."
     },
     {
       img: "https://www.pwc.co.za/en/assets/images/Heroes/hero-za-careers-lady-on-laptop-smiling.jpg.pwcimage.150.100.jpg",
-      title: "Feature Three",
-      text: "This is the description for feature three."
+      title: "Global Digital Trust Insight Survay 2025",
+      text: "South Africa and Africa Report."
     }
   ];
 
