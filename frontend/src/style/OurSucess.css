@@ -1,77 +1,98 @@
 /* Our Success Stories Styles with Full Responsiveness */
 
 .Our {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-    text-align: center;
-    background-color: #f5f5f586;
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
-  }
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: #f5f5f586;
+  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
 
-.Our h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .Our-item {
-    background: rgba(255, 255, 255, 0.26);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    max-width: 25%; /* Ensures exactly 4 items in a row */
-    flex: 1 1 25%;
-    transition: transform 0.3s ease-in-out;
-    min-width: 250px; /* Ensures minimum width */
-  }
-  
-  .Our-item:hover {
-    transform: scale(1.05);
-  }
-  
-  .Our-img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-  
-  .Our-title {
-    font-size: 1.8rem;
-    margin: 15px 0 10px;
-    color: #333;
-  }
-  
-  .Our-text {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.5;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 1024px) {
-    .Our {
+/* Header Styling */
+.Header h1 {
+
+  color: aqua;
+  text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.5); /* Added text shadow */
+  font-size: 2.2rem;
+  font-weight: bold;
+  background-color: antiquewhite;
+}
+
+/* Success Story Card */
+.Our-item {
+  background: rgba(255, 255, 255, 0.26);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  max-width: 25%; /* Ensures exactly 4 items in a row */
+  flex: 1 1 25%;
+  transition: transform 0.3s ease-in-out;
+  min-width: 250px; /* Ensures minimum width */
+}
+
+.Our-item:hover {
+  transform: scale(1.05);
+}
+
+/* Image Styling */
+.Our-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Title Styling */
+.Our-title {
+  font-size: 1.8rem;
+  margin: 15px 0 10px;
+  color: #333;
+}
+
+/* Text Styling */
+.Our-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Styles */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .Our {
       flex-wrap: wrap; /* Allow wrapping on smaller screens */
       justify-content: center;
-    }
-    .Our-item {
+  }
+  .Our-item {
       max-width: 45%; /* 2 items per row on tablets */
       flex: 1 1 45%;
-    }
   }
-  
-  @media (max-width: 768px) {
-    .Our {
+  .Header h1 {
+      margin-left: 50px;
+      font-size: 2rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .Our {
       flex-direction: column;
       align-items: center;
-    }
-    
-    .Our-item {
-      max-width: 95%; /* Single column on mobile */
-    }
+      overflow-x: hidden; /* Prevent horizontal scroll */
   }
-  
+  .Our-item {
+      max-width: 95%; /* Single column layout */
+  }
+  .Header h1 {
+      margin-left: 20px;
+      font-size: 1.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      text-align: center;
+  }
+}

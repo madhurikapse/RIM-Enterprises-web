@@ -25,10 +25,10 @@ const OurSucessStories = () => {
       }
   ];
 
-  return (
-    <div className="Our">
-        <p>Our success stories
-        4 results</p>
+  return (<>
+    <div className="Header"><h1>Our success stories
+        4 results</h1></div>
+    <div className="Our">   
       {features.map((feature, index) => (
         <div key={index} className="Our-item">
           <img src={feature.img} alt={feature.title} className="Our-img" />
@@ -37,6 +37,9 @@ const OurSucessStories = () => {
         </div>
       ))}
     </div>
+    <div>
+    <button>View All</button></div>
+    </>
   );
 };
 
