@@ -46,12 +46,16 @@ const OurSucessStories = () => {
               <h1 className="Our-title">{feature.title}</h1>
               <p className="Our-text">{feature.text}</p>
             </div>
+            
           ))}
             {/* Button to toggle stories */}
      
         </div>
         
       )}
+       <div>
+        <button onClick={() => navigate("/success")}>View all</button>
+      </div>
     </>
   );
 };

@@ -13,13 +13,20 @@
 }
 
 /* Header Styling */
-.Header h1 {
+.Header {
+  text-align: center;
+  margin-bottom: 40px; /* Header और बटन के बीच ज्यादा space */
+}
 
+.Header h1 {
   color: aqua;
   text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.5); /* Added text shadow */
   font-size: 2.2rem;
   font-weight: bold;
   background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
 }
 
 /* Success Story Card */
@@ -49,7 +56,7 @@
 /* Title Styling */
 .Our-title {
   font-size: 1.8rem;
-  margin: 15px 0 10px;
+  margin: 15px 0 20px; /* Increased space below title */
   color: #333;
 }
 
@@ -58,7 +65,29 @@
   font-size: 1.1rem;
   color: #666;
   line-height: 1.5;
+  margin-bottom: 40px; /* Text और बटन के बीच ज्यादा space */
 }
+
+/* BUTTON STYLING */
+.btn-container {
+  display: flex;
+  justify-content: center; /* Center align */
+  margin-top: 50px; /* बटन और स्टोरीज के बीच ज्यादा space */
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #eaecee, #131414);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Responsive Styles */
 
@@ -73,7 +102,6 @@
       flex: 1 1 45%;
   }
   .Header h1 {
-      margin-left: 50px;
       font-size: 2rem;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
   }
@@ -90,9 +118,12 @@
       max-width: 95%; /* Single column layout */
   }
   .Header h1 {
-      margin-left: 20px;
       font-size: 1.8rem;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       text-align: center;
+  }
+  .btn {
+      font-size: 1.2rem;
+      padding: 12px 25px;
   }
 }
