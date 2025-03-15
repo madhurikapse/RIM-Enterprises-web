@@ -9,6 +9,8 @@ import Services from './components/Services.js'
 import Industries from './components/Industries.js'
 import Feature from "./pages/Feature.js";
 import OurSucessStories from "./pages/OurSucessStories.js";
+import SucessPage from "./pages/SucessPage.js";
+
 function App() {
   return (
     <Router>
@@ -23,6 +25,7 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/careers" element={<Careers/>}/>
         <Route path="/product" element={<Product/>}/>
+        <Route path="/success" element={<SucessPage />} />
       </Routes>
     </Router>
   );
