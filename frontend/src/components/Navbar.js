@@ -45,7 +45,7 @@ export default function Navbar() {
         <NavItem to="/services">Services</NavItem>
         <NavItem to="/problems">Important Problems</NavItem>
         <NavItem to="/about">About Us</NavItem>
-        <NavItem to="/careers">Careers</NavItem>
+        <NavItem to="/Contact">Contact</NavItem>
         <NavItem to="/product">Product</NavItem>
       </ul>
 
