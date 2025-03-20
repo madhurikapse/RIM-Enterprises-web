@@ -11,7 +11,7 @@ const Contact = () => {
 
       <h2>Our Office</h2>
       <p>18 San Berbadino Langerveld Road Midrane 1686</p>
-      <p>Email:rimenterprises@hotmail.com or riment1001@gmail.com</p>
+      <p>Email:rimenterprises@hotmail.com</p>
       <p>Phone: +27 65 893 1828</p>
 
       <h2>Send Us a Message</h2>

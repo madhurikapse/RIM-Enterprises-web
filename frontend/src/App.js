@@ -11,13 +11,14 @@ import Feature from "./pages/Feature.js";
 import OurSucessStories from "./pages/OurSucessStories.js";
 import SucessPage from "./pages/SucessPage.js";
 import Contact from "./components/Contact.js";
-
+import Footer from "./components/Footer.js";
+import VedioPage from './pages/VedioPage.js'
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<><Home /><Feature /><OurSucessStories /></>} />
+        <Route path="/" element={<><Home /><VedioPage/><Feature /><OurSucessStories /></>} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/services" element={<Services />} />
         <Route path="/problems" element={<Problems />} />
@@ -26,6 +27,8 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/success" element={<SucessPage />} />
       </Routes>
+      
+    <Footer/>
     </Router>
   );
 }
