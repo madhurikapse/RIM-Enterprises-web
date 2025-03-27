@@ -1,31 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import "../style/Contact.css";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    try {
+      const response = await emailjs.send(
+        "service_xom7687", // ✅ Your EmailJS Service ID
+        "template_yaen0ez", // ✅ Your EmailJS Template ID (Replace it)
+        {
+          user_name: formData.name, 
+          user_email: formData.email, 
+          user_message: formData.message, 
+        },
+        "gYxuPHeXwRBpEJCqx" // ✅ Your EmailJS Public Key
+      );
+
+      console.log("✅ Email sent successfully:", response);
+      setSuccessMessage("✅ Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+
+    } catch (error) {
+      console.error("❌ EmailJS Error:", error);
+      setErrorMessage("❌ Error sending message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="contact-container">
       <h1>Contact RIM Enterprises</h1>
-      <p>
-        Have questions or need assistance? Reach out to us, and our team will be happy to help!
-      </p>
+      <p>Have questions or need assistance? Reach out to us!</p>
 
-      <h2>Our Office</h2>
-      <p>18 San Berbadino Langerveld Road Midrane 1686</p>
-      <p>Email:rimenterprises@hotmail.com</p>
-      <p>Phone: +27 65 893 1828</p>
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <h2>Send Us a Message</h2>
-      <form className="contact-form">
+      <form className="contact-form" onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input type="text" placeholder="Enter your name" required />
-        
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+
         <label>Email:</label>
-        <input type="email" placeholder="Enter your email" required />
-        
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+
         <label>Message:</label>
-        <textarea placeholder="Write your message" required></textarea>
-        
-        <button type="submit">Send Message</button>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        ></textarea>
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </form>
     </div>
   );

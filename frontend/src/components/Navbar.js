@@ -16,14 +16,7 @@ export default function Navbar() {
         <img src="/assets/logo.jpeg" alt="Logo" className="logo" />
       </Link>
 
-      {/* Search Bar */}
-      <input
-        type="text"
-        placeholder="Search..."
-        className="search-bar"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
+    
 
       {/* Location Dropdown */}
       <select
@@ -41,18 +34,14 @@ export default function Navbar() {
 
       {/* Desktop Navigation */}
       <ul className="navbar-links">
-        <NavItem to="/industries">Industries</NavItem>
         <NavItem to="/services">Services</NavItem>
-        <NavItem to="/problems">Important Problems</NavItem>
         <NavItem to="/about">About Us</NavItem>
         <NavItem to="/Contact">Contact</NavItem>
-        <NavItem to="/product">Product</NavItem>
       </ul>
 
-      {/* Mobile Menu Button */}
       <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <X size={28} /> : <Menu size={28} />}
-      </button>
+  {isOpen ? <X size={28} /> : <Menu size={28} />}
+</button>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isOpen ? "active" : ""}`}>
