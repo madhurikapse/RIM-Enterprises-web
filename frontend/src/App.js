@@ -13,12 +13,14 @@ import SucessPage from "./pages/SucessPage.js";
 import Contact from "./components/Contact.js";
 import Footer from "./components/Footer.js";
 import VedioPage from './pages/VedioPage.js'
+import "./App.css"
+import Overview from "./components/Overview.js";
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<><Home /><VedioPage/><Feature /><OurSucessStories /></>} />
+        <Route path="/" element={<><Home /><VedioPage/><About /><Feature /><Services /><Overview/><OurSucessStories /><Contact/></>} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/services" element={<Services />} />
         <Route path="/problems" element={<Problems />} />

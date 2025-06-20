@@ -1,0 +1,56 @@
+.overview-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* space between each block */
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  background: linear-gradient(to right, #000000, #b30000); /* horizontal gradient */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Apply box style to each p, ul, li for block effect */
+.overview-container p,
+.overview-container ul,
+.overview-container li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 10px;
+  animation: blinkMove 5s infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Make ul and li stack nicely */
+.overview-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.overview-container li::before {
+  content: "✔ ";
+  color: #fff;
+  margin-right: 8px;
+}
+
+/* Heading styling */
+.overview-container h1,
+.overview-container h2 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Animation for slight blink/move effect */
+@keyframes blinkMove {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateX(10px);
+  }
+}
