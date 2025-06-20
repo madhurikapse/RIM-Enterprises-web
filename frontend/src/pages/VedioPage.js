@@ -1,33 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../style/VedioPage.css";
 
-const VideoPage = () => {
-  const videos = [
-    { id: 1, title: "Company Meeting", src:"vedios/vedio3.mp4" },
-    { id: 2, title: "Office Party", src:"vedios/vedio4.mp4"},
-    { id: 3, title: "Annual deals Celebration", src:"vedios/vedio1.mp4" },
-  ];
+const content = [
+  {
+    title1: "Service",
+    subtitle1: "Compudynamics South Africa offers Managed IT Services you can trust",
+    image: "https://www.compudynamics.co.za/wp-content/uploads/2019/11/Compudynamics-Consult.jpg"
+  },
+  {
+    title1: "Company Profile",
+    subtitle1: "Customer service: RIM Enterprises offers high-quality customer service and strives to provide complete satisfaction to clientsRIM Enterprises maintains the highest quality standards and is an ASA-100 accredited aircraft parts supplierRIM Enterprises is open and honest, and lives its values every day",
+    image: "https://www.compudynamics.co.za/wp-content/uploads/2020/10/IMG-20121211-00044-980x735.jpg"
+  },
+  {
+    title1: "Values",
+    subtitle1: "RIM Enterprises values each of its employees and supports them to the full extent of its capabilities.",
+    image: "https://www.compudynamics.co.za/wp-content/uploads/2020/07/Main1.jpg"
+  }
+];
+const VedioPage = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % content.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="video-page">
-      <h2 className="video-title">Our Events & Highlights</h2>
-      <div className="video-grid">
-        {videos.map((video) => (
-          video.src ? ( // Only render if video source exists
-            <div key={video.id} className="video-card">
-              <video controls autoPlay loop muted>
-                <source src={video.src} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <p>{video.title}</p>
-            </div>
-          ) : (
-            <p key={video.id} className="error-message">Video unavailable: {video.title}</p>
-          )
-        ))}
+    <div className="container1">
+      <div className="content">
+        <img src={content[index].image} alt="Logo" className="logo" />
+        <div className="text">
+          <h1 className="title1">{content[index].title1}</h1>
+          <p className="subtitle1">{content[index].subtitle1}</p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default VideoPage;
+export default VedioPage;

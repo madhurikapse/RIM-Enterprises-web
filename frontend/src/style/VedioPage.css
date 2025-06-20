@@ -1,32 +1,120 @@
+/* Container styling */
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #060606, #101b39);
+  padding: 20px;
+}
 
-/* VideoPage.css */
-.video-page {
-    padding: 20px;
+/* Content layout - side by side */
+.content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Image styling */
+.logo {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Text styling */
+.text {
+  max-width: 500px;
+  color: #ffffff;
+}
+
+.title1 {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle1 {
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
     text-align: center;
-    background: #f4f4f4;
-  }
-  
-  .video-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+  }
+
+  .logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .title1 {
+    font-size: 24px;
+  }
+
+  .subtitle1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .content {
     padding: 20px;
   }
-  
-  .video-card {
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  .logo {
+    width: 130px;
+    height: 130px;
   }
-  
-  video {
-    width: 100%;
-    border-radius: 8px;
+
+  .title1 {
+    font-size: 22px;
   }
-  
+
+  .subtitle1 {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 15px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .title1 {
+    font-size: 20px;
+  }
+
+  .subtitle1 {
+    font-size: 14px;
+  }
+}
