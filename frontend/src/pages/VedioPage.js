@@ -4,7 +4,7 @@ import "../style/VedioPage.css";
 const content = [
   {
     title1: "Service",
-    subtitle1: "Compudynamics South Africa offers Managed IT Services you can trust",
+    subtitle1: "Rim enterprises offers Managed IT Services you can trust",
     image: "https://www.compudynamics.co.za/wp-content/uploads/2019/11/Compudynamics-Consult.jpg"
   },
   {
