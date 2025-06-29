@@ -1,55 +1,19 @@
-import express from 'express';
-import nodemailer from 'nodemailer';
-import 'dotenv/config';
-
+import express from "express";
 const router = express.Router();
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
+router.post('/subscribe', (req, res) => {
+  const { name, email } = req.body;
+  console.log("🟢 Request Body:", req.body);
 
-router.post('/subscribe', async (req, res) => {
-  const { firstName, email } = req.body;
-
-  console.log('Received subscription request:', req.body);
-
-  if (!firstName || !email) {
-    console.log('Error: Missing fields');
-    return res.status(400).json({ success: false, message: 'Missing fields' });
+  if (!name || !email) {
+    console.warn("⚠️ Missing name or email");
+    return res.status(400).json({ success: false, message: "Name and email are required." });
   }
 
-  try {
-    const userMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: 'Subscription Confirmation',
-      text: `Hi ${firstName},\n\nThank you for subscribing to our company Antoinette Hands!`,
-    };
+  // Optionally save to DB
+  // await Subscriber.create({ name, email });
 
-    const adminMailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.ADMIN_EMAIL,
-      subject: 'New Subscription Alert',
-      text: `New subscriber:\n\nName: ${firstName}\nEmail: ${email}`,
-    };
-
-    console.log('Sending emails...');
-    
-    await transporter.sendMail(userMailOptions);
-    console.log('User email sent successfully');
-
-    await transporter.sendMail(adminMailOptions);
-    console.log('Admin email sent successfully');
-
-    res.json({ success: true, message: 'Subscription successful!' });
-  } catch (error) {
-    console.error('Email Error:', error);
-    res.status(500).json({ success: false, message: 'Email sending failed', error: error.message });
-  }
+  return res.status(200).json({ success: true, message: "Enquiry received successfully!" });
 });
 
 export default router;
