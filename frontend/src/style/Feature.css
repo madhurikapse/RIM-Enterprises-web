@@ -1,14 +1,15 @@
 /* Feature Component Styles with Full Responsiveness */
 
 .feature-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    background-color: rgba(128, 128, 128, 0.319);
-    text-align: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  background: linear-gradient(to right, #fff5e1, #ffe1dc);
+  text-align: center;
+}
+
   
   .feature-item {
     background: #f9f9f9;

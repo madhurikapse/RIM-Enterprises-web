@@ -3,37 +3,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height:60vh;
-  background: linear-gradient(to right, #f5f1f1, #0a0a0a);
+  height: 60vh;
+  background: linear-gradient(to right, #fff5e1, #ffe1dc); /* soft resort gradient */
   padding: 16px;
   text-align: center;
 }
 
+/* Logo Styling */
 .logo {
   width: 128px;
   height: 128px;
   margin-bottom: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Heading */
 .title {
   font-size: 58px;
   font-weight: bold;
   margin-top: 10px;
-  color: #f4f4f4;
+  color: #e88e1a; /* Golden orange accent */
   text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Subtitle */
 .subtitle {
   font-size: 18px;
-  color: #e0e0e0;
+  color: #333;
   max-width: 80%;
-  text-align: center;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .title {
-    font-size: 24px;
+    font-size: 36px;
   }
 
   .subtitle {
@@ -49,7 +57,7 @@
   }
 
   .title {
-    font-size: 20px;
+    font-size: 28px;
   }
 
   .subtitle {

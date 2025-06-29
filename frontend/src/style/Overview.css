@@ -1,56 +1,60 @@
 .overview-container {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* space between each block */
+  gap: 20px;
   max-width: 1000px;
   margin: 40px auto;
   padding: 40px 30px;
-  background: linear-gradient(to right, #000000, #f3f1f1); /* horizontal gradient */
+  background: linear-gradient(to right, #fff5e1, #ffe1dc); /* Resort gradient */
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: #333333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Apply box style to each p, ul, li for block effect */
+/* Box style for content blocks */
 .overview-container p,
 .overview-container ul,
 .overview-container li {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.6);
   padding: 15px 20px;
   border-radius: 10px;
   animation: blinkMove 5s infinite;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
-/* Make ul and li stack nicely */
+/* Remove default list style */
 .overview-container ul {
   list-style: none;
   padding: 0;
 }
 
+/* Golden tick bullet */
 .overview-container li::before {
   content: "✔ ";
-  color: #fff;
+  color: #e88e1a;
+  font-weight: bold;
   margin-right: 8px;
 }
 
-/* Heading styling */
+/* Headings */
 .overview-container h1,
 .overview-container h2 {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #e88e1a;
   padding-bottom: 5px;
   margin-bottom: 10px;
+  color: #222;
 }
 
-/* Animation for slight blink/move effect */
+/* Animation */
 @keyframes blinkMove {
   0%, 100% {
     opacity: 1;
     transform: translateX(0);
   }
   50% {
-    opacity: 0.85;
-    transform: translateX(10px);
+    opacity: 0.92;
+    transform: translateX(8px);
   }
 }

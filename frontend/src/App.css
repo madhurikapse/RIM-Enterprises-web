@@ -2,12 +2,22 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/046/386/166/small/abstract-blue-and-pink-glowing-lines-curved-overlapping-background-template-premium-award-design-vector.jpg');
-background-size: cover;
-background-position: center;
-
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+
+  /* Background image with a smooth gradient overlay */
+  background: linear-gradient(
+      rgba(255, 245, 225, 0.9),
+      rgba(255, 225, 220, 0.85)
+    ),
+    url('https://static.vecteezy.com/system/resources/thumbnails/046/386/166/small/abstract-blue-and-pink-glowing-lines-curved-overlapping-background-template-premium-award-design-vector.jpg');
+    
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
+
 .App {
   text-align: center;
   background-color: gray;
