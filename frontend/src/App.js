@@ -11,6 +11,7 @@ import Feature from "./pages/Feature.js";
 import OurSucessStories from "./pages/OurSucessStories.js";
 import SucessPage from "./pages/SucessPage.js";
 import Contact from "./components/Contact.js";
+import Contact1 from "./pages/Contact1.js"
 import Footer from "./components/Footer.js";
 import VedioPage from './pages/VedioPage.js'
 import "./App.css"
@@ -20,7 +21,7 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<><Home /><VedioPage/><About /><Services /><Overview/><OurSucessStories /><Contact/></>} />
+        <Route path="/" element={<><Home /><VedioPage/><About /><Services /><Overview/><OurSucessStories /><Contact1/></>} />
         <Route path="/industries" element={<Industries />} />
         <Route path="/services" element={<Services />} />
         <Route path="/problems" element={<Problems />} />

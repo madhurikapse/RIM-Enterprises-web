@@ -1,13 +1,20 @@
-import mongoose from "mongoose";
+// models/Subscriber.js
 
-const subscriberSchema = new mongoose.Schema(
-  {
-    firstName: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
+import mongoose from 'mongoose';
+
+const subscriberSchema = new mongoose.Schema({
+  firstName: {
+    type: String,
+    required: true,
   },
-  { timestamps: true }
-);
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true, // auto-convert to lowercase before saving
+  },
+});
 
-const Subscriber = mongoose.model("Subscriber", subscriberSchema);
+const Subscriber = mongoose.model('Subscriber', subscriberSchema);
 
 export default Subscriber;

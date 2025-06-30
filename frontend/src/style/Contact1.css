@@ -1,0 +1,125 @@
+/* Container */
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+  color: #f9fafb;
+  background-color: #111827;
+}
+
+/* Main Heading */
+.contact-container h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #38bdf8;
+  text-align: center;
+}
+
+/* Layout Flex */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+/* Form Styling */
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #22c55e;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #16a34a;
+}
+
+/* Map Styling */
+.map-container {
+  flex: 1;
+  min-width: 280px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Address Info */
+.contact-info {
+  margin-top: 40px;
+  color: #d1d5db;
+}
+
+.contact-info h2 {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+/* Link Styling */
+.footer-contact-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-contact-link:hover {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+/* WhatsApp link */
+.contact-info a {
+  color: #10b981;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  color: #34d399;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .map-container {
+    height: 250px;
+  }
+
+  .contact-form button {
+    width: 100%;
+  }
+}

@@ -17,20 +17,24 @@ const Footer = () => {
     }
 
     try {
+      
       const { data } = await Api.post('/subscribe', {
-        name,
-        email,
-      });
+  firstName: name, // ✅ fix here
+  email,
+});
+
 
       if (data.success) {
         toast.success('Thanks for contacting Rim Enterprises!');
-        setName('');
-        setEmail('');
-
+        
         const whatsappMessage = `📩 New Client Enquiry:\n👤 Name: ${name}\n📧 Email: ${email}`;
         const encodedMessage = encodeURIComponent(whatsappMessage);
         const whatsappURL = `https://wa.me/27658931828?text=${encodedMessage}`;
         window.open(whatsappURL, '_blank');
+
+        // Clear input fields after message
+        setName('');
+        setEmail('');
       } else {
         toast.error(data.message || 'Submission failed. Try again.');
       }
@@ -45,9 +49,31 @@ const Footer = () => {
       {/* Company Info */}
       <div className="footer-section company-info">
         <h3>📍 Contact Rim Enterprises</h3>
-        <p><strong>Phone:</strong> <a href="tel:+27658931828" className="footer-link">+27 65 893 1828</a></p>
-        <p><strong>Email:</strong> <a href="mailto:riment1001@gmail.com" className="footer-link">riment1001@gmail.com</a></p>
-        <p><strong>Address:</strong><br />18 San Bernadino, Langerveld Road,<br />Midrand 1686, South Africa</p>
+       <p>
+  <strong>Phone:</strong>{' '}
+  <a href="tel:+27658931828" className="footer-contact-link">
+    +27 658931828
+  </a>
+</p>
+<p>
+  <strong>Email:</strong>{' '}
+  <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=riment1001@gmail.com&su=Booking%20Enquiry"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Open in Gmail
+</a>
+
+</p>
+
+        <p>
+          <strong>Address:</strong>
+          <br />
+          18 San Bernadino, Langerveld Road,
+          <br />
+          Midrand 1686, South Africa
+        </p>
         <p><strong>Working Hours:</strong></p>
         <ul>
           <li>Mon - Fri: 9:00 AM – 6:00 PM</li>
@@ -94,13 +120,31 @@ const Footer = () => {
 
         {/* Social Links */}
         <div className="social-media-box">
-          <a href="https://wa.me/27658931828" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
+          <a
+            href="https://wa.me/27658931828"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="WhatsApp"
+          >
             <i className="fab fa-whatsapp"></i>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="Instagram"
+          >
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label="Facebook"
+          >
             <i className="fab fa-facebook-f"></i>
           </a>
         </div>

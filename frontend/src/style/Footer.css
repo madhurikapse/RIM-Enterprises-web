@@ -1,77 +1,122 @@
 .footer {
-  background: #0a0a0a;
-  color: #f0f0f0;
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 40px 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .footer-section {
-  flex: 1 1 300px;
-  margin: 20px;
+  flex: 1;
+  min-width: 260px;
 }
 
 .footer-section h3 {
-  color: #ffcc00;
-  margin-bottom: 15px;
+  color: #38bdf8;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d1d5db;
+  text-decoration:double;
+  
+}
+.footer-contact-link {
+  color: #3b82f6; /* Tailwind's blue-500 */
+ 
+  font-weight: 500;
+}
+
+.footer-contact-link:hover {
+  color: #60a5fa; /* Slightly lighter blue */
+  text-decoration: underline;
+}
+
+.footer-link {
+  color: #facc15;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #fcd34d;
+  text-decoration: underline;
 }
 
 .footer-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-section ul li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.footer-section a {
-  color: #ffcc00;
-  text-decoration: none;
-}
-
-.footer-section a:hover {
-  text-decoration: underline;
-}
-
-.footer form {
+form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-.footer form input,
-.footer form button {
+form input {
   padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #22c55e;
+  color: white;
   border: none;
   border-radius: 5px;
-}
-
-.footer form button {
-  background-color: #ffcc00;
-  color: #000;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.footer form button:hover {
-  background-color: #ffc107;
+form button:hover {
+  background-color: #16a34a;
 }
 
 .social-media-box {
-  margin-top: 15px;
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
 }
 
 .social-icon {
-  margin-right: 10px;
-  font-size: 24px;
-  color: #ffcc00;
-  transition: transform 0.3s;
+  font-size: 20px;
+  color: #f3f4f6;
+  transition: color 0.3s;
 }
 
 .social-icon:hover {
-  transform: scale(1.2);
+  color: #38bdf8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 30px;
+  }
+
+  .social-media-box {
+    justify-content: center;
+  }
 }

@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import subscribeRouter from './route/subscribe.js';
+import subscribeRouter from './route/Subscribe.js';
 
 // Load env vars
 dotenv.config();
