@@ -62,7 +62,7 @@ const Footer = () => {
   target="_blank"
   rel="noopener noreferrer"
 >
-  Open in Gmail
+  riment1001@gmail.com
 </a>
 
 </p>
